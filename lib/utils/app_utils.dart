@@ -3,18 +3,12 @@ import 'dart:math';
 import 'package:diacritic/diacritic.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:package_info/package_info.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
-
 import '../theme/colors.dart';
-import 'log_utils.dart';
 
 class Utils {
-  static var METHOD_CHANNEL ="METHOD_CALL_NATIVE";
+  static var METHOD_CHANNEL = "METHOD_CALL_NATIVE";
   static var eventBus = EventBus();
 
   static fireEvent(dynamic model) => eventBus.fire(model);
@@ -86,15 +80,6 @@ class Utils {
   final date = DateTime.tryParse(stringTime ?? '');
   return date != null ? Jiffy(date).add(months: month).format('dd/MM/yyyy') : '';
 }*/
-
-  static void openBrowser(String url) async {
-    print("open url: $url");
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not open the map.';
-    }
-  }
 
   static void snackBarMessage(String message,
       {Color? backgroundColor, SnackPosition? position, Color? colorText}) {
@@ -187,67 +172,12 @@ class Utils {
   static String convertDateToMMYYYY(DateTime date) =>
       DateFormat('MM/yyyy').format(date);
 
-  static Future<String> generateDynamicLink(Map<String, String> params) async {
-    try{
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      var url ="ConstantKey.DYNAMIC_LINK";
-      var buffer = StringBuffer();
-      buffer.write(url);
-      List<String> keys = params.keys.toList();
-      for (int i = 0; i < keys.length; i++) {
-        buffer.write(i == 0 ? "?" : "&");
-        buffer.write(keys[i]);
-        buffer.write("=");
-        buffer.write(params[keys[i]]);
-      }
-      final DynamicLinkParameters parameters = DynamicLinkParameters(
-        uriPrefix: "ConstantKey.DYNAMIC_LINK",
-        link: Uri.parse(buffer.toString()),
-        androidParameters: AndroidParameters(
-          packageName: packageInfo.packageName,
-          minimumVersion: int.parse(packageInfo.buildNumber),
-        ),
-        iosParameters: IOSParameters(appStoreId:"ConstantKey.IOS_APP_STORE_ID",
-          bundleId: packageInfo.packageName,
-          minimumVersion: packageInfo.version,
-        ),
-      );
-      final ShortDynamicLink shortDynamicLink =
-      await FirebaseDynamicLinks.instance.buildShortLink(parameters);
-      final Uri shortUrl = shortDynamicLink.shortUrl;
-      return shortUrl.toString();
-    }catch(ex){
-      return "";
-    }
-  }
-
   static bool checkDiacriticsForEmail(String email) =>
       removeDiacritics(email) == email ? false : true;
 
-  static Future<void> openMailApp({String mail='locduoi1998@gmail.com'}) async {
-    print(mail);
-    final Uri params = Uri(
-      scheme: 'mailto',
-      path: mail,
-      query: 'subject=&body=', //add subject and body here
-    );
-    var url = params.toString();
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-
   static String formatMoney(int? money) =>
-      NumberFormat('#,###,###,#,###,###,###', 'vi').format(money??0);
+      NumberFormat('#,###,###,#,###,###,###', 'vi').format(money ?? 0);
 
   static String randomTag() => Random().nextInt(100).toString();
 
-  static void openMap(double latitude, double longitude) async {
-    String googleUrl =
-        'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
-    Utils.openBrowser(googleUrl);
-  }
 }
