@@ -22,7 +22,7 @@ Future<void> configApp() async {
   HttpOverrides.global = MyHttpOverrides();
   configOrientation();
   await GetStorage.init();
-  await dotenv.load(fileName: '.env.dev');
+  // await dotenv.load(fileName: '.env.dev');
 }
 
 void configOrientation() {
