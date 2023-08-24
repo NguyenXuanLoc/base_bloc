@@ -25,8 +25,11 @@ class $AssetsPngGen {
   /// File path: assets/png/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/png/doctor.png');
 
+  /// File path: assets/png/ic_apple.png
+  AssetGenImage get icApple => const AssetGenImage('assets/png/ic_apple.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [doctor];
+  List<AssetGenImage> get values => [doctor, icApple];
 }
 
 class $AssetsSvgGen {
@@ -45,6 +48,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/doctor_background.svg
   String get doctorBackground => 'assets/svg/doctor_background.svg';
 
+  /// File path: assets/svg/ic_apple.svg
+  String get icApple => 'assets/svg/ic_apple.svg';
+
   /// File path: assets/svg/ic_bell.svg
   String get icBell => 'assets/svg/ic_bell.svg';
 
@@ -56,6 +62,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/ic_deal_green.svg
   String get icDealGreen => 'assets/svg/ic_deal_green.svg';
+
+  /// File path: assets/svg/ic_facebook.svg
+  String get icFacebook => 'assets/svg/ic_facebook.svg';
 
   /// File path: assets/svg/ic_logo.svg
   String get icLogo => 'assets/svg/ic_logo.svg';
@@ -84,10 +93,12 @@ class $AssetsSvgGen {
         backCircle,
         doctor,
         doctorBackground,
+        icApple,
         icBell,
         icBellGreen,
         icDeal,
         icDealGreen,
+        icFacebook,
         icLogo,
         icLogoTest,
         icMap,
@@ -98,12 +109,26 @@ class $AssetsSvgGen {
       ];
 }
 
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// File path: assets/translations/pl.json
+  String get pl => 'assets/translations/pl.json';
+
+  /// List of all assets
+  List<String> get values => [en, pl];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

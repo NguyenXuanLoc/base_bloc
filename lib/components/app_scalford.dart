@@ -7,11 +7,13 @@ class AppScaffold extends StatelessWidget {
   final Color? backgroundColor;
   final EdgeInsets padding;
   final Widget? bottomNavigationBar;
+  final bool isTabToHideKeyboard;
 
   const AppScaffold(
       {Key? key,
       required this.body,
       this.appbar,
+      this.isTabToHideKeyboard = false,
       this.backgroundColor,
       this.padding = const EdgeInsets.only(left: 0, right: 0),
       this.bottomNavigationBar})
@@ -19,11 +21,11 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MediaQuery(
+    var content = MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
         child: Scaffold(
           backgroundColor: backgroundColor ?? colorBackgroundColor,
-          resizeToAvoidBottomInset: true,
+          resizeToAvoidBottomInset: false,
           appBar: appbar,
           body: SafeArea(
             minimum: padding,
@@ -31,5 +33,13 @@ class AppScaffold extends StatelessWidget {
           ),
           bottomNavigationBar: bottomNavigationBar,
         ));
+    return isTabToHideKeyboard
+        ? Material(
+            child: InkWell(
+                hoverColor: colorTransparent,
+                highlightColor: colorTransparent,
+                splashColor: colorTransparent,
+                child: content))
+        : content;
   }
 }
