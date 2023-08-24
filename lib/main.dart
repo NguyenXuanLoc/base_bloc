@@ -54,22 +54,20 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return ScreenUtilInit(designSize: Size(390,962),
         builder: (c, w) => MaterialApp(
-              title: 'Fluro',
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                textTheme: GoogleFonts.mulishTextTheme(),
-                backgroundColor: Colors.white,
-                primaryColor: Colors.white,
-                bottomAppBarColor: Colors.yellow,
-                dividerColor: Colors.transparent,
-                // canvasColor: Colors.transparent,
-                shadowColor: Colors.transparent,
-                appBarTheme: const AppBarTheme(elevation: 0),
-              ),
-              onGenerateRoute: Application.router.generator,
-            ));
+            title: 'Fluro',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              textTheme: GoogleFonts.mulishTextTheme(),
+              backgroundColor: Colors.white,
+              primaryColor: Colors.white,
+              bottomAppBarColor: Colors.yellow,
+              dividerColor: Colors.transparent,
+              shadowColor: Colors.transparent,
+              appBarTheme: const AppBarTheme(elevation: 0),
+            ),
+            onGenerateRoute: Application.router.generator));
   }
 }
 

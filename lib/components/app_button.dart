@@ -2,7 +2,6 @@ import 'package:base_bloc/theme/app_styles.dart';
 import 'package:base_bloc/theme/colors.dart';
 import 'package:base_bloc/utils/app_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
   final double? height;
@@ -22,7 +21,7 @@ class AppButton extends StatelessWidget {
 
   const AppButton({
     Key? key,
-     this.title,
+    this.title,
     required this.onPress,
     this.height,
     this.width,
@@ -47,7 +46,7 @@ class AppButton extends StatelessWidget {
       enableFeedback: false,
       materialTapTargetSize: materialTapTargetSize,
       padding: padding,
-      height: height ?? 37.h,
+      height: height ?? 37,
       minWidth: width,
       color: backgroundColor,
       shape: shapeBorder ??

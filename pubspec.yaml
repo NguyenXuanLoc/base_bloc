@@ -8,21 +8,21 @@ environment:
   sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
-  google_fonts: ^2.1.0
+  google_fonts: ^5.1.0
   flutter_dotenv: ^5.0.0
-  flutter_svg: ^0.22.0
+  flutter_svg: ^2.0.7
   pull_to_refresh: ^2.0.0
   logger: ^1.0.0
   event_bus: ^2.0.0
   get_storage: ^2.0.2  # save data to storage(sharePref)
-  intl: ^0.17.0
+  intl: ^0.18.1
   cached_network_image: ^3.0.0
   cupertino_icons: ^1.0.2
-  flutter_screenutil: ^5.5.0
+  flutter_screenutil: ^5.7.0
   fluttertoast: ^8.0.9
   flutter_bloc: ^8.1.1
   #  device_info_plus: ^2.0.1
-  device_info: ^2.0.3
+  device_info: any
   expandable_page_view: ^1.0.14
   flutter:
     sdk: flutter
@@ -40,19 +40,27 @@ dependencies:
   fluro: ^2.0.3
   visibility_detector: ^0.3.3
   get_it: ^7.2.0
+  change_app_package_name: ^1.1.0
 
 dev_dependencies:
+  flutter_gen: ^5.2.0
   build_runner:
   flutter_gen_runner:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
+  flutter_launcher_icons: ^0.11.0
+flutter_icons :
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 # and
 flutter:
   uses-material-design: true
   assets:
      - assets/svg/
      - assets/png/
+     - assets/icon/
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -5,9 +5,29 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
+
+class $AssetsIconGen {
+  const $AssetsIconGen();
+
+  /// File path: assets/icon/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/icon/icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icon];
+}
+
+class $AssetsPngGen {
+  const $AssetsPngGen();
+
+  /// File path: assets/png/doctor.png
+  AssetGenImage get doctor => const AssetGenImage('assets/png/doctor.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [doctor];
+}
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
@@ -24,11 +44,65 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/doctor_background.svg
   String get doctorBackground => 'assets/svg/doctor_background.svg';
+
+  /// File path: assets/svg/ic_bell.svg
+  String get icBell => 'assets/svg/ic_bell.svg';
+
+  /// File path: assets/svg/ic_bell_green.svg
+  String get icBellGreen => 'assets/svg/ic_bell_green.svg';
+
+  /// File path: assets/svg/ic_deal.svg
+  String get icDeal => 'assets/svg/ic_deal.svg';
+
+  /// File path: assets/svg/ic_deal_green.svg
+  String get icDealGreen => 'assets/svg/ic_deal_green.svg';
+
+  /// File path: assets/svg/ic_logo.svg
+  String get icLogo => 'assets/svg/ic_logo.svg';
+
+  /// File path: assets/svg/ic_logo_test.svg
+  String get icLogoTest => 'assets/svg/ic_logo_test.svg';
+
+  /// File path: assets/svg/ic_map.svg
+  String get icMap => 'assets/svg/ic_map.svg';
+
+  /// File path: assets/svg/ic_map_green.svg
+  String get icMapGreen => 'assets/svg/ic_map_green.svg';
+
+  /// File path: assets/svg/ic_personal.svg
+  String get icPersonal => 'assets/svg/ic_personal.svg';
+
+  /// File path: assets/svg/ic_personal_green.svg
+  String get icPersonalGreen => 'assets/svg/ic_personal_green.svg';
+
+  /// File path: assets/svg/ic_qr.svg
+  String get icQr => 'assets/svg/ic_qr.svg';
+
+  /// List of all assets
+  List<dynamic> get values => [
+        avatarTest,
+        backCircle,
+        doctor,
+        doctorBackground,
+        icBell,
+        icBellGreen,
+        icDeal,
+        icDealGreen,
+        icLogo,
+        icLogoTest,
+        icMap,
+        icMapGreen,
+        icPersonal,
+        icPersonalGreen,
+        icQr
+      ];
 }
 
 class Assets {
   Assets._();
 
+  static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
@@ -87,6 +161,17 @@ class AssetGenImage {
       filterQuality: filterQuality,
       cacheWidth: cacheWidth,
       cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
     );
   }
 

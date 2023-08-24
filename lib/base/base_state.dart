@@ -1,31 +1,32 @@
 import 'dart:async';
 
-import 'package:base_bloc/utils/log_utils.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../data/eventbus/switch_tab_event.dart';
 import '../utils/app_utils.dart';
 import 'bloc.dart';
 
-abstract class BaseState<T extends StatefulWidget> extends BaseSetState<T> {
-  // late ProgressHUD progressHUD;
+abstract class BaseState<T extends StatefulWidget, X extends Cubit>
+    extends BaseSetState<T> {
+  late X bloc;
+
+  X createCubit();
 
   @override
   void initState() {
+    bloc = createCubit();
     super.initState();
-    /*   progressHUD = ProgressHUD(
-        backgroundColor: Colors.black12,
-        color: Colors.white,
-        containerColor: DefaultColor.colorProgress,
-        borderRadius: ScreenUtil().setWidth(20));*/
+    init();
   }
+
+  void init();
 }
 
-abstract class BasePopState<T extends StatefulWidget> extends BaseState<T> {
+abstract class BasePopState<T extends StatefulWidget, X extends Cubit>
+    extends BaseState<T, X> {
   StreamSubscription<SwitchTabEvent>? _goRoot;
 
   Widget buildWidget(BuildContext context);

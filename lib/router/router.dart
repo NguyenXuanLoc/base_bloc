@@ -12,12 +12,12 @@ class Routers {
         (BuildContext? context, Map<String, List<String>>? params) {
       logE("ROUTE WAS NOT FOUND !!!");
     });
-    router.define(root, handler: routeHome);
+    router.define(root, handler: routeSplash);
     router.define(test, handler: routeTest);
   }
 }
 
-class MainRouters {
+class DealRouter {
   static String root = '/';
   static String test = "/test";
   static String test2 = "/test2";
@@ -26,14 +26,13 @@ class MainRouters {
     router.notFoundHandler = Handler(handlerFunc: (c, p) {
       logE("ROUTE WAS NOT FOUND !!!");
     });
-    router.define(root, handler: routeTabMain);
+    router.define(root, handler: routeDeal);
     router.define(test, handler: routeTest);
     router.define(test2, handler: routeTest2);
-
   }
 }
 
-class SecondRouters {
+class MapRouter {
   static String root = '/';
   static String test = "/test";
   static String test2 = "/test2";
@@ -42,7 +41,52 @@ class SecondRouters {
     router.notFoundHandler = Handler(handlerFunc: (c, p) {
       logE("ROUTE WAS NOT FOUND !!!");
     });
-    router.define(root, handler: routeTabSecond);
+    router.define(root, handler: routeMap);
+    router.define(test, handler: routeTest);
+    router.define(test2, handler: routeTest2);
+  }
+}
+
+class NotifyRouter {
+  static String root = '/';
+  static String test = "/test";
+  static String test2 = "/test2";
+
+  static configureSecondRouters(FluroRouter router) {
+    router.notFoundHandler = Handler(handlerFunc: (c, p) {
+      logE("ROUTE WAS NOT FOUND !!!");
+    });
+    router.define(root, handler: routeNotify);
+    router.define(test, handler: routeTest);
+    router.define(test2, handler: routeTest2);
+  }
+}
+
+class ProfileRouter {
+  static String root = '/';
+  static String test = "/test";
+  static String test2 = "/test2";
+
+  static configureSecondRouters(FluroRouter router) {
+    router.notFoundHandler = Handler(handlerFunc: (c, p) {
+      logE("ROUTE WAS NOT FOUND !!!");
+    });
+    router.define(root, handler: routeProfile);
+    router.define(test, handler: routeTest);
+    router.define(test2, handler: routeTest2);
+  }
+}
+
+class QrRouter {
+  static String root = '/';
+  static String test = "/test";
+  static String test2 = "/test2";
+
+  static configureSecondRouters(FluroRouter router) {
+    router.notFoundHandler = Handler(handlerFunc: (c, p) {
+      logE("ROUTE WAS NOT FOUND !!!");
+    });
+    router.define(root, handler: routeQr);
     router.define(test, handler: routeTest);
     router.define(test2, handler: routeTest2);
   }

@@ -1,4 +1,4 @@
-package com.example.base_bloc
+package com.sway_me
 
 import io.flutter.embedding.android.FlutterActivity
 
