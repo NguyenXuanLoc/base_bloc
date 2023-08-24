@@ -1,18 +1,14 @@
 class StorageKey {
   StorageKey._();
 
-  static const String CurrentToken = 'CurrentToken';
-  static const String AccountInfo = 'AccountInfo';
-  static const String doctorPromote = 'DoctorPromote';
-  static const String ratingLatest = 'ratingLatest';
-  static const String loginByFbOrGg = 'loginByFbOrGg';
+  static const String isGuideline = 'isGuideline';
 }
 
 class ConstantKey {
   static const String USER = 'user';
-  static const int aDAY=86400000;
-  static const String DYNAMIC_LINK="https://docsify.page.link";
-  static const String IOS_APP_STORE_ID="1634725173";
+  static const int aDAY = 86400000;
+  static const String DYNAMIC_LINK = "https://docsify.page.link";
+  static const String IOS_APP_STORE_ID = "1634725173";
   static const int WEEK_INDEX_OFFSET = 5200;
   static const String TOKEN_EXPIRED = 'token expired';
   static const String CONNECTION_TIMED_OUT = 'Connection timed out';

@@ -21,9 +21,7 @@ dependencies:
   flutter_screenutil: ^5.7.0
   fluttertoast: ^8.0.9
   flutter_bloc: ^8.1.1
-  #  device_info_plus: ^2.0.1
   device_info: any
-  expandable_page_view: ^1.0.14
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -31,7 +29,6 @@ dependencies:
   firebase_core: ^1.3.0
   connectivity_plus: ^2.3.0 #internet connection
   flutter_facebook_auth: ^4.3.0
-  flutter_datetime_picker: ^1.5.1
   sqflite: ^2.0.2+1
   diacritic: ^0.1.3
   back_button_interceptor: ^6.0.1
@@ -40,7 +37,9 @@ dependencies:
   fluro: ^2.0.3
   visibility_detector: ^0.3.3
   get_it: ^7.2.0
-  change_app_package_name: ^1.1.0
+  easy_localization: ^3.0.1
+  smooth_page_indicator: ^1.1.0
+
 
 dev_dependencies:
   flutter_gen: ^5.2.0
@@ -49,18 +48,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  flutter_launcher_icons: ^0.11.0
-flutter_icons :
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icon/icon.png"
-  min_sdk_android: 21 # and
 flutter:
   uses-material-design: true
   assets:
      - assets/svg/
      - assets/png/
      - assets/icon/
+     - assets/translations/
+
   # fonts:
   #   - family: Schyler
   #     fonts:

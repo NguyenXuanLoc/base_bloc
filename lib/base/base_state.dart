@@ -12,7 +12,7 @@ import 'bloc.dart';
 abstract class BaseState<T extends StatefulWidget, X extends Cubit>
     extends BaseSetState<T> {
   late X bloc;
-
+  void init();
   X createCubit();
 
   @override
@@ -22,7 +22,6 @@ abstract class BaseState<T extends StatefulWidget, X extends Cubit>
     init();
   }
 
-  void init();
 }
 
 abstract class BasePopState<T extends StatefulWidget, X extends Cubit>

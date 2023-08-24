@@ -52,7 +52,7 @@ class RouterUtils {
     return result;
   }
 
-  static pushDeal<T>(
+  static Future<T> pushDeal<T>(
       {required BuildContext context,
       required String route,
       dynamic argument,
@@ -64,7 +64,7 @@ class RouterUtils {
     return result;
   }
 
-  static pushMap<T>(
+  static Future<T> pushMap<T>(
       {required BuildContext context,
       required String route,
       dynamic argument,
@@ -76,7 +76,7 @@ class RouterUtils {
     return result;
   }
 
-  static pushQr<T>(
+  static Future<T> pushQr<T>(
       {required BuildContext context,
       required String route,
       dynamic argument,
@@ -88,7 +88,7 @@ class RouterUtils {
     return result;
   }
 
-  static pushNotify<T>(
+  static Future<T> pushNotify<T>(
       {required BuildContext context,
       required String route,
       dynamic argument,
@@ -100,7 +100,7 @@ class RouterUtils {
     return result;
   }
 
-  static pushProfile<T>(
+  static Future<T> pushProfile<T>(
       {required BuildContext context,
       required String route,
       dynamic argument,
