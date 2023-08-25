@@ -5,6 +5,7 @@ import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import '../components/date_picker.dart';
 import '../theme/colors.dart';
 
 class Utils {
@@ -12,6 +13,12 @@ class Utils {
   static var eventBus = EventBus();
 
   static fireEvent(dynamic model) => eventBus.fire(model);
+
+  static bool validatePassword(String value) {
+    String pattern = r'^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$';
+    RegExp regExp = RegExp(pattern);
+    return regExp.hasMatch(value);
+  }
 
   static String getQueryString(Map params,
       {String prefix = '&', bool inRecursion = false}) {
@@ -92,10 +99,21 @@ class Utils {
         snackPosition: position ?? SnackPosition.BOTTOM);
   }
 
-  static bool validatePassword(String value) {
+/*  static bool validatePassword(String value) {
     String pattern = r'^(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
     RegExp regExp = RegExp(pattern);
     return regExp.hasMatch(value);
+  }*/
+
+  static void pickDate(BuildContext context, Function(DateTime) callback) {
+    var time = DateTime.now();
+    DatePicker.showDatePicker(context,
+        showTitleActions: true,
+        minTime: DateTime(1900, 3, 5),
+        maxTime: DateTime(time.year, time.month, time.day),
+        onChanged: (date) {}, onConfirm: (date) {
+      callback.call(date);
+    }, currentTime: DateTime.now(), locale: LocaleType.en);
   }
 
   static String convertTimeToDDMMHH(DateTime? time) {
@@ -179,5 +197,4 @@ class Utils {
       NumberFormat('#,###,###,#,###,###,###', 'vi').format(money ?? 0);
 
   static String randomTag() => Random().nextInt(100).toString();
-
 }

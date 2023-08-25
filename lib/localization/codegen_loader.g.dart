@@ -22,6 +22,13 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "please_accept_rule": "Please accept rule",
+    "pass_is_valid": "Pass is valid",
+    "please_input_pass": "Please input pass",
+    "please_input_date_time": "Please input date time",
+    "please_input_instargram_name": "Please input Instagram name",
+    "please_input_email": "Please input email",
+    "email_is_not_valid": "Email is not valid",
     "I_confirm_that_the_given_account_is_my_personal_account": "Potwierdzam, że podane konto jest moim kontem osobistym, jest publiczne oraz ma co najmniej  250 obserwujących",
     "I_accept_the_terms_of_use": "Akceptuję warunki korzystania",
     "We_recommend_using_a_different_password_than_your_Instagram_account": "Zalecamy użycie innego hasła niż do konta na Instagramie.",

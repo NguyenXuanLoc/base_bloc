@@ -9,16 +9,6 @@
 
 import 'package:flutter/widgets.dart';
 
-class $AssetsIconGen {
-  const $AssetsIconGen();
-
-  /// File path: assets/icon/icon.png
-  AssetGenImage get icon => const AssetGenImage('assets/icon/icon.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [icon];
-}
-
 class $AssetsPngGen {
   const $AssetsPngGen();
 
@@ -50,6 +40,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/ic_apple.svg
   String get icApple => 'assets/svg/ic_apple.svg';
+
+  /// File path: assets/svg/ic_back.svg
+  String get icBack => 'assets/svg/ic_back.svg';
 
   /// File path: assets/svg/ic_bell.svg
   String get icBell => 'assets/svg/ic_bell.svg';
@@ -94,6 +87,7 @@ class $AssetsSvgGen {
         doctor,
         doctorBackground,
         icApple,
+        icBack,
         icBell,
         icBellGreen,
         icDeal,
@@ -109,26 +103,11 @@ class $AssetsSvgGen {
       ];
 }
 
-class $AssetsTranslationsGen {
-  const $AssetsTranslationsGen();
-
-  /// File path: assets/translations/en.json
-  String get en => 'assets/translations/en.json';
-
-  /// File path: assets/translations/pl.json
-  String get pl => 'assets/translations/pl.json';
-
-  /// List of all assets
-  List<String> get values => [en, pl];
-}
-
 class Assets {
   Assets._();
 
-  static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
-  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

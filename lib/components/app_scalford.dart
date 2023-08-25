@@ -1,4 +1,5 @@
 import 'package:base_bloc/theme/colors.dart';
+import 'package:base_bloc/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 
 class AppScaffold extends StatelessWidget {
@@ -24,22 +25,18 @@ class AppScaffold extends StatelessWidget {
     var content = MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
         child: Scaffold(
-          backgroundColor: backgroundColor ?? colorBackgroundColor,
-          resizeToAvoidBottomInset: false,
-          appBar: appbar,
-          body: SafeArea(
-            minimum: padding,
-            child: body,
-          ),
-          bottomNavigationBar: bottomNavigationBar,
-        ));
+            backgroundColor: backgroundColor ?? colorBackgroundColor,
+            resizeToAvoidBottomInset: false,
+            appBar: appbar,
+            body: SafeArea(
+              minimum: padding,
+              child: body,
+            ),
+            bottomNavigationBar: bottomNavigationBar));
     return isTabToHideKeyboard
         ? Material(
-            child: InkWell(
-                hoverColor: colorTransparent,
-                highlightColor: colorTransparent,
-                splashColor: colorTransparent,
-                child: content))
+            child: GestureDetector(
+                onTap: () => Utils.hideKeyboard(context), child: content))
         : content;
   }
 }

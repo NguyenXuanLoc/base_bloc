@@ -2,6 +2,13 @@
 
 abstract class LocaleKeys {
   static const title = 'title';
+  static const please_input_email = 'please_input_email';
+  static const email_is_not_valid = 'email_is_not_valid';
+  static const please_input_instargram_name = 'please_input_instargram_name';
+  static const please_input_date_time = 'please_input_date_time';
+  static const please_input_pass = 'please_input_pass';
+  static const please_accept_rule = 'please_accept_rule';
+  static const pass_is_valid = 'pass_is_valid';
   static const I_accept_the_terms_of_use = 'I_accept_the_terms_of_use';
   static const I_confirm_that_the_given_account_is_my_personal_account = 'I_confirm_that_the_given_account_is_my_personal_account';
   static const We_recommend_using_a_different_password_than_your_Instagram_account =

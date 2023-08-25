@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Dialogs {
   static final GlobalKey<State> _keyLoader = GlobalKey<State>();
 
-  Future<void>? showLoadingDialog(BuildContext? context) {
+ static Future<void>? showLoadingDialog(BuildContext? context) {
     if (context == null) {
       return null;
     }
