@@ -22,6 +22,13 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "resent_success": "resent_success",
+    "otp_is_not_valid": "Otp is not valid",
+    "change_email": "Zmień e-mail",
+    "send_it_again": "Wyślij ponownie",
+    "Confirm_the_code": "Zatwierdź kod",
+    "To_the_email_address_provided": "Na podany adres e-mail",
+    "We_have_sent_the_activation_code": "Wysłaliśmy kod aktywacyjny",
     "please_accept_rule": "Please accept rule",
     "pass_is_valid": "Pass is valid",
     "please_input_pass": "Please input pass",
@@ -29,9 +36,11 @@ class Applocalizations extends AssetLoader {
     "please_input_instargram_name": "Please input Instagram name",
     "please_input_email": "Please input email",
     "email_is_not_valid": "Email is not valid",
-    "I_confirm_that_the_given_account_is_my_personal_account": "Potwierdzam, że podane konto jest moim kontem osobistym, jest publiczne oraz ma co najmniej  250 obserwujących",
+    "I_confirm_that_the_given_account_is_my_personal_account":
+        "Potwierdzam, że podane konto jest moim kontem osobistym, jest publiczne oraz ma co najmniej  250 obserwujących",
     "I_accept_the_terms_of_use": "Akceptuję warunki korzystania",
-    "We_recommend_using_a_different_password_than_your_Instagram_account": "Zalecamy użycie innego hasła niż do konta na Instagramie.",
+    "We_recommend_using_a_different_password_than_your_Instagram_account":
+        "Zalecamy użycie innego hasła niż do konta na Instagramie.",
     "Password": "Hasło",
     "Your_Instagram_name": "Twoja nazwa na Instagramie",
     "your_email": "Twój e-mail",
