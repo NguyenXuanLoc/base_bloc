@@ -40,7 +40,7 @@ class _OtpPageState extends BaseState<OtpPage, OtpBloc> {
           children: [
             space(),
             AppText(LocaleKeys.We_have_sent_the_activation_code.tr(),
-                style: typoW500.copyWith(fontSize: 24.sp)),
+                style: typoW700.copyWith(fontSize: 24.sp)),
             space(),
             AppText(LocaleKeys.To_the_email_address_provided.tr(),
                 style: typoW500.copyWith(fontSize: 16.sp)),

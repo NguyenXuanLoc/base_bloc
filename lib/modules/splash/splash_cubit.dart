@@ -5,6 +5,7 @@ import 'package:base_bloc/modules/home_page/home_page.dart';
 import 'package:base_bloc/modules/otp/otp_page.dart';
 import 'package:base_bloc/modules/register/register_page.dart';
 import 'package:base_bloc/modules/splash/splash_state.dart';
+import 'package:base_bloc/modules/verify_instagram/verify_instagram_page.dart';
 import 'package:base_bloc/router/router_utils.dart';
 import 'package:base_bloc/utils/storage_utils.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,7 +22,7 @@ class SplashCubit extends Cubit<SplashState> {
   void openHomePage(BuildContext context) async {
     var isGuideline = await StorageUtils.isGuideline();
     RouterUtils.pushTo(context,
-        OtpPage() /*!isGuideline ? const GuidelinePage() : const HomePage()*/,
+        VerifyInstagramPage() /*!isGuideline ? const GuidelinePage() : const HomePage()*/,
         isReplace: true);
   }
 }

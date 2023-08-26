@@ -2,6 +2,10 @@
 
 abstract class LocaleKeys {
   static const title = 'title';
+  static const appName = 'appName';
+  static const Instagram_profile_from_the_previously_provided_account = 'Instagram_profile_from_the_previously_provided_account';
+  static const Copy_and_paste_the_given_text_under_the_last_post_on_the = 'Copy_and_paste_the_given_text_under_the_last_post_on_the';
+  static const Verify_your_Instagram = 'Verify_your_Instagram';
   static const resent_success = 'resent_success';
   static const To_the_email_address_provided = 'To_the_email_address_provided';
   static const otp_is_not_valid = 'otp_is_not_valid';
