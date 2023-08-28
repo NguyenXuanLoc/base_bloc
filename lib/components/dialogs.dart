@@ -1,10 +1,12 @@
 import 'package:base_bloc/theme/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../base/hex_color.dart';
+
 class Dialogs {
   static final GlobalKey<State> _keyLoader = GlobalKey<State>();
 
- static Future<void>? showLoadingDialog(BuildContext? context) {
+  static Future<void>? showLoadingDialog(BuildContext? context) {
     if (context == null) {
       return null;
     }
@@ -17,12 +19,12 @@ class Dialogs {
             child: SimpleDialog(
               key: _keyLoader,
               backgroundColor: Colors.transparent,
-              children: const <Widget>[
+              children:  <Widget>[
                 Center(
                   child: CircularProgressIndicator(
                     backgroundColor: colorNeutralDark20,
                     valueColor:
-                        AlwaysStoppedAnimation<Color>(colorPrimaryBrand100),
+                        AlwaysStoppedAnimation<Color>(HexColor('25C869')),
                   ),
                 )
               ],

@@ -19,7 +19,9 @@ import '../../localization/locale_keys.dart';
 import '../../theme/app_styles.dart';
 
 class OtpPage extends StatefulWidget {
-  const OtpPage({Key? key}) : super(key: key);
+  final VoidCallback otpCallbackSuccess;
+  final VoidCallback goBack;
+  const OtpPage({Key? key, required this.otpCallbackSuccess, required this.goBack}) : super(key: key);
 
   @override
   State<OtpPage> createState() => _OtpPageState();
@@ -33,8 +35,7 @@ class _OtpPageState extends BaseState<OtpPage, OtpBloc> {
   Widget build(BuildContext context) {
     return AppScaffold(
         isTabToHideKeyboard: true,
-        padding: EdgeInsets.only(
-            left: contentPadding , right: contentPadding ),
+        padding: EdgeInsets.only(left: contentPadding, right: contentPadding),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -116,5 +117,6 @@ class _OtpPageState extends BaseState<OtpPage, OtpBloc> {
       );
 
   @override
-  OtpBloc createCubit() => OtpBloc();
+  OtpBloc createCubit() =>
+      OtpBloc(otpSuccessCallback: () => widget.otpCallbackSuccess.call());
 }

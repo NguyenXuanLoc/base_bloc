@@ -15,12 +15,16 @@ import '../../utils/app_utils.dart';
 enum RuleType { AcceptRule, ConfirmAcc }
 
 class EmailRegisterBloc extends Cubit<EmailRegisterState> {
+  final VoidCallback registerSuccessCallback;
   var emailController = TextEditingController();
   var instagramNameController = TextEditingController();
   var dateControllerController = TextEditingController();
   var passwordController = TextEditingController();
 
-  EmailRegisterBloc() : super(EmailRegisterState());
+  EmailRegisterBloc({required this.registerSuccessCallback})
+      : super(EmailRegisterState()) {
+    fakeData('', '');
+  }
 
   void ruleOnClick(RuleType type) {
     switch (type) {
@@ -41,12 +45,19 @@ class EmailRegisterBloc extends Cubit<EmailRegisterState> {
         await Dialogs.hideLoadingDialog();
         if (!fakeData(email, pass)) {
           toast('Password is not correct, Please try again...');
-        } else {}
+        } else {
+          registerSuccessCallback.call();
+        }
       });
     }
   }
 
   bool fakeData(String email, String pass) {
+    emailController.text = 'locduoi1998@gmail.com';
+    instagramNameController.text = 'locduoi';
+    dateControllerController.text = '13/02/1009';
+    passwordController.text = 'Test1234';
+    emit(state.copyOf(isAcceptRule: true, isConfirmAcc: true));
     if (email == 'locduoi1998@gmail.com' && pass == 'Test1234') {
       return true;
     }
@@ -88,6 +99,7 @@ class EmailRegisterBloc extends Cubit<EmailRegisterState> {
     }
     if (!state.isAcceptRule || !state.isConfirmAccount) {
       state.errorRules = LocaleKeys.please_accept_rule.tr();
+      isValid = false;
     } else {
       state.errorRules = null;
     }

@@ -25,7 +25,12 @@ import 'email_register_state.dart';
 enum TextFieldType { Email, InstagramName, DateTime, Pass }
 
 class EmailRegisterPage extends StatefulWidget {
-  const EmailRegisterPage({Key? key}) : super(key: key);
+  final VoidCallback registerSuccessCallback;
+  final VoidCallback goBack;
+
+  const EmailRegisterPage(
+      {Key? key, required this.registerSuccessCallback, required this.goBack})
+      : super(key: key);
 
   @override
   State<EmailRegisterPage> createState() => _EmailRegisterPageState();
@@ -43,17 +48,6 @@ class _EmailRegisterPageState
         padding: EdgeInsets.only(left: contentPadding, right: contentPadding),
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           space(),
-          GradientProgressBar(
-              percent: 50,
-              gradient: LinearGradient(
-                  colors: [HexColor('004314'), HexColor('25C869')]),
-              backgroundColor: HexColor('DEDEDE')),
-          space(),
-          center(
-            AppText("1 ${LocaleKeys.out_of.tr()} 3 ${LocaleKeys.steps.tr()}",
-                style: typoW500.copyWith(fontSize: 14.sp)),
-          ),
-          space(),
           AppText(LocaleKeys.Join_Swayme.tr(),
               style: typoW500.copyWith(fontSize: 24.sp)),
           space(height: 5),
@@ -70,8 +64,12 @@ class _EmailRegisterPageState
               hintText: 'DD/MM/YYYY',
               onTap: () => bloc.dateOnclick(context)),
           space(height: 5),
-          textField(bloc.passwordController, TextFieldType.Pass,
-              hintText: LocaleKeys.Password.tr()),
+          textField(
+            bloc.passwordController,
+            TextFieldType.Pass,
+            hintText: LocaleKeys.Password.tr(),
+            obscureText: true,
+          ),
           AppText(
               LocaleKeys
                       .We_recommend_using_a_different_password_than_your_Instagram_account
@@ -102,7 +100,7 @@ class _EmailRegisterPageState
         children: [
           InkWell(
               child: SvgPicture.asset(Assets.svg.icBack),
-              onTap: () => Navigator.pop(context)),
+              onTap: () => widget.goBack.call()),
           const Spacer(),
           AppButton(
             width: 124.w,
@@ -151,10 +149,14 @@ class _EmailRegisterPageState
           ]);
 
   Widget textField(TextEditingController controller, TextFieldType type,
-          {String? hintText, bool enable = true, VoidCallback? onTap}) =>
+          {String? hintText,
+          bool enable = true,
+          VoidCallback? onTap,
+          bool? obscureText}) =>
       BlocBuilder<EmailRegisterBloc, EmailRegisterState>(
           bloc: bloc,
           builder: (c, state) => AppTextField(
+                obscureText: obscureText,
                 errorText: type == TextFieldType.Email
                     ? state.errorEmail
                     : type == TextFieldType.DateTime
@@ -176,5 +178,6 @@ class _EmailRegisterPageState
   Widget space({double? height}) => SizedBox(height: height ?? 20);
 
   @override
-  EmailRegisterBloc createCubit() => EmailRegisterBloc();
+  EmailRegisterBloc createCubit() => EmailRegisterBloc(
+      registerSuccessCallback: () => widget.registerSuccessCallback.call());
 }

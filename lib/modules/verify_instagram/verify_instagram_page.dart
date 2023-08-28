@@ -17,7 +17,12 @@ import '../../theme/app_styles.dart';
 import '../../theme/colors.dart';
 
 class VerifyInstagramPage extends StatefulWidget {
-  const VerifyInstagramPage({Key? key}) : super(key: key);
+  final VoidCallback verifySuccessCallback;
+  final VoidCallback goBack;
+
+  const VerifyInstagramPage(
+      {Key? key, required this.verifySuccessCallback, required this.goBack})
+      : super(key: key);
 
   @override
   State<VerifyInstagramPage> createState() => _VerifyInstagramPageState();
@@ -68,11 +73,11 @@ class _VerifyInstagramPageState
         children: [
           InkWell(
               child: SvgPicture.asset(Assets.svg.icBack),
-              onTap: () => Navigator.pop(context)),
+              onTap: () => widget.goBack.call()),
           const Spacer(),
           AppButton(
               width: 124.w,
-              onPress: () =>bloc.nextOnclick(),
+              onPress: () => widget.verifySuccessCallback.call(),
               height: 53.h,
               titleWidget: AppText(LocaleKeys.next.tr(),
                   style: typoW500.copyWith(fontSize: 16.sp, color: colorWhite)),

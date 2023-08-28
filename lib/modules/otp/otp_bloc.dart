@@ -10,9 +10,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OtpBloc extends Cubit<OtpState> {
+  final VoidCallback otpSuccessCallback;
   var otpController = TextEditingController();
 
-  OtpBloc() : super(OtpState());
+  OtpBloc({required this.otpSuccessCallback}) : super(OtpState()) {
+    fakeData();
+  }
 
   void otpOnclick(BuildContext context) async {
     if (!isValid()) return;
@@ -20,8 +23,7 @@ class OtpBloc extends Cubit<OtpState> {
     Timer(const Duration(seconds: 1), () async {
       await Dialogs.hideLoadingDialog();
       if (fakeData()) {
-        //Todo
-        //Notify share post
+        otpSuccessCallback.call();
       }
     });
   }
@@ -35,7 +37,7 @@ class OtpBloc extends Cubit<OtpState> {
   }
 
   bool fakeData() {
-    logE('otpController: ${otpController.text}');
+    otpController.text = '4444';
     if (otpController.text == '4444') {
       return true;
     } else {
