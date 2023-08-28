@@ -2,6 +2,7 @@
 
 abstract class LocaleKeys {
   static const title = 'title';
+  static const copy_success = 'copy_success';
   static const appName = 'appName';
   static const Instagram_profile_from_the_previously_provided_account = 'Instagram_profile_from_the_previously_provided_account';
   static const Copy_and_paste_the_given_text_under_the_last_post_on_the = 'Copy_and_paste_the_given_text_under_the_last_post_on_the';

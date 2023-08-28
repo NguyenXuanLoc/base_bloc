@@ -9,6 +9,16 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconGen {
+  const $AssetsIconGen();
+
+  /// File path: assets/icon/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/icon/icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icon];
+}
+
 class $AssetsPngGen {
   const $AssetsPngGen();
 
@@ -18,8 +28,14 @@ class $AssetsPngGen {
   /// File path: assets/png/ic_apple.png
   AssetGenImage get icApple => const AssetGenImage('assets/png/ic_apple.png');
 
+  /// File path: assets/png/ic_copy.png
+  AssetGenImage get icCopy => const AssetGenImage('assets/png/ic_copy.png');
+
+  /// File path: assets/png/ic_supper.png
+  AssetGenImage get icSupper => const AssetGenImage('assets/png/ic_supper.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [doctor, icApple];
+  List<AssetGenImage> get values => [doctor, icApple, icCopy, icSupper];
 }
 
 class $AssetsSvgGen {
@@ -49,6 +65,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/ic_bell_green.svg
   String get icBellGreen => 'assets/svg/ic_bell_green.svg';
+
+  /// File path: assets/svg/ic_copy.svg
+  String get icCopy => 'assets/svg/ic_copy.svg';
 
   /// File path: assets/svg/ic_deal.svg
   String get icDeal => 'assets/svg/ic_deal.svg';
@@ -80,6 +99,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ic_qr.svg
   String get icQr => 'assets/svg/ic_qr.svg';
 
+  /// File path: assets/svg/ic_supper.svg
+  String get icSupper => 'assets/svg/ic_supper.svg';
+
   /// List of all assets
   List<dynamic> get values => [
         avatarTest,
@@ -90,6 +112,7 @@ class $AssetsSvgGen {
         icBack,
         icBell,
         icBellGreen,
+        icCopy,
         icDeal,
         icDealGreen,
         icFacebook,
@@ -99,15 +122,31 @@ class $AssetsSvgGen {
         icMapGreen,
         icPersonal,
         icPersonalGreen,
-        icQr
+        icQr,
+        icSupper
       ];
+}
+
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// File path: assets/translations/pl.json
+  String get pl => 'assets/translations/pl.json';
+
+  /// List of all assets
+  List<String> get values => [en, pl];
 }
 
 class Assets {
   Assets._();
 
+  static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

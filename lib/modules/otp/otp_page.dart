@@ -34,7 +34,7 @@ class _OtpPageState extends BaseState<OtpPage, OtpBloc> {
     return AppScaffold(
         isTabToHideKeyboard: true,
         padding: EdgeInsets.only(
-            left: contentPadding + 2, right: contentPadding + 2),
+            left: contentPadding , right: contentPadding ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

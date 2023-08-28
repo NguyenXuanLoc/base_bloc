@@ -22,9 +22,10 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "copy_success": "copy_success",
     "appName": "swayme",
-    "Instagram_profile_from_the_previously_provided_account": "Instagramie z wcześniej podanego konta.",
-    "Copy_and_paste_the_given_text_under_the_last_post_on_the": "Skopiuj i wstaw podany tekst pod ostatnim postem na profilu",
+    "Instagram_profile_from_the_previously_provided_account": "Instagramie\nz wcześniej podanego konta.",
+    "Copy_and_paste_the_given_text_under_the_last_post_on_the": "Skopiuj i wstaw podany tekst pod ostatnim\n postem na profilu",
     "Verify_your_Instagram": "Zweryfikuj swój Instagram",
     "resent_success": "resent_success",
     "otp_is_not_valid": "Otp is not valid",
