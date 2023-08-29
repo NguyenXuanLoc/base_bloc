@@ -1,3 +1,4 @@
+import 'package:base_bloc/base/hex_color.dart';
 import 'package:base_bloc/theme/app_styles.dart';
 import 'package:base_bloc/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -86,8 +87,9 @@ class _AppTextFieldState extends State<AppTextField> {
           maxLengthEnforcement: widget.maxLengthEnforcement,
           focusNode: widget.focusNode,
           controller: widget.controller,
-          style: widget.textStyle?.copyWith(height: widget.height) ??
-              styleTextField.copyWith(height: widget.height),
+          style: widget.textStyle
+                  ?.copyWith(height: widget.height, fontSize: 15) ??
+              typoW500.copyWith(height: widget.height, fontSize: 15),
           obscureText: widget.obscureText ?? false,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
@@ -114,7 +116,9 @@ class _AppTextFieldState extends State<AppTextField> {
                   hintText: widget.hintText,
                   prefixIcon: widget.prefixIcon,
                   suffixIcon: widget.suffixIcon,
-                  hintStyle: widget.hintStyle),
+                  hintStyle: widget.hintStyle ??
+                      typoW500.copyWith(
+                          fontSize: 15, color: HexColor('8F8F8F'))),
         ),
         Text(
             widget.isShowErrorText

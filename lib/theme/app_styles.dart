@@ -3,15 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
-final googleFont = GoogleFonts.nunito(letterSpacing: 0.2, color: colorBlack);
-final typoW400 = GoogleFonts.nunito(
-    letterSpacing: 0.2, color: colorBlack, fontWeight: FontWeight.w400);
-final typoW500 = GoogleFonts.nunito(
-    letterSpacing: 0.2, color: colorBlack, fontWeight: FontWeight.w500);
-final typoW600 = GoogleFonts.nunito(
-    letterSpacing: 0.2, color: colorBlack, fontWeight: FontWeight.w600);
-final typoW700 = GoogleFonts.nunito(
-    letterSpacing: 0.2, color: colorBlack, fontWeight: FontWeight.w700);
+final googleFont = GoogleFonts.inter(letterSpacing: 0.1, color: colorBlack);
+final typoW400 = GoogleFonts.inter(
+    letterSpacing: 0.1, color: colorBlack, fontWeight: FontWeight.w400);
+final typoW500 = GoogleFonts.inter(
+    letterSpacing: 0.1, color: colorBlack, fontWeight: FontWeight.w500);
+final typoW600 = GoogleFonts.inter(
+    letterSpacing: 0.1, color: colorBlack, fontWeight: FontWeight.w600);
+final typoW700 = GoogleFonts.inter(
+    letterSpacing: 0.1, color: colorBlack, fontWeight: FontWeight.w700);
 
 
 
@@ -71,24 +71,24 @@ final boxShadow = [
 
 
 
-final typoNormalTextBold = GoogleFonts.roboto(
+final typoNormalTextBold = GoogleFonts.inter(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w600,
   fontSize: 16.sp,
-  letterSpacing: 0.2,
+  letterSpacing: 0.1,
   color: colorBlack,
 );
 
 
-final typoNormalTextRegular = GoogleFonts.roboto(
+final typoNormalTextRegular = GoogleFonts.inter(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,
   fontSize: 16.sp,
-  letterSpacing: 0.2,
+  letterSpacing: 0.1,
   color: colorBlack,
 );
 
-final typoNormalTextRegularNoSpacing = GoogleFonts.roboto(
+final typoNormalTextRegularNoSpacing = GoogleFonts.inter(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,
   fontSize: 16.sp,
@@ -96,19 +96,19 @@ final typoNormalTextRegularNoSpacing = GoogleFonts.roboto(
 );
 
 
-final typoSmallTextBold = GoogleFonts.roboto(
+final typoSmallTextBold = GoogleFonts.inter(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w600,
   fontSize:  13.5.sp,
-  letterSpacing: 0.2,
+  letterSpacing: 0.1,
   color: colorBlack,
 );
 
-final typoSmallTextRegular = GoogleFonts.roboto(
+final typoSmallTextRegular = GoogleFonts.inter(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,
   fontSize:  13.5.sp,
-  letterSpacing: 0.2,
+  letterSpacing: 0.1,
   color: colorBlack,
 );
 

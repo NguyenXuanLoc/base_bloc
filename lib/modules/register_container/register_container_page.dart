@@ -9,7 +9,6 @@ import 'package:base_bloc/modules/verify_instagram/verify_instagram_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../base/hex_color.dart';
 import '../../components/app_text.dart';
@@ -40,18 +39,14 @@ class _RegisterContainerPageState
             space(),
             Expanded(
                 child: PageView(
-                    physics: const NeverScrollableScrollPhysics(),
+                    // physics: const NeverScrollableScrollPhysics(),
                     controller: bloc.pageController,
                     children: [
                   EmailRegisterPage(
-                      registerSuccessCallback: () =>
-                          bloc.jumpToPage(RegisterType.Otp),
+                      registerSuccessCallback: (email) =>
+                          bloc.jumpToPage(RegisterType.Otp, email: email),
                       goBack: () => Navigator.pop(context)),
-                  OtpPage(
-                    otpCallbackSuccess: () =>
-                        bloc.jumpToPage(RegisterType.ConfirmInstagram),
-                    goBack: () => bloc.jumpToPage(RegisterType.Email),
-                  ),
+                  otpWidget(),
                   VerifyInstagramPage(
                       verifySuccessCallback: () => bloc.nextOnclick(context),
                       goBack: () => bloc.jumpToPage(RegisterType.Email))
@@ -59,6 +54,18 @@ class _RegisterContainerPageState
           ],
         ));
   }
+
+  Widget
+      otpWidget() =>
+          BlocBuilder<RegisterContainerCubit, RegisterContainerState>(
+              bloc: bloc,
+              builder:
+                  (c, state) =>
+                      OtpPage(
+                          otpCallbackSuccess: () =>
+                              bloc.jumpToPage(RegisterType.ConfirmInstagram),
+                          goBack: () => bloc.jumpToPage(RegisterType.Email),
+                          email: state.email ?? ''));
 
   Widget center(Widget widget) => Center(child: widget);
 
@@ -75,7 +82,7 @@ class _RegisterContainerPageState
                 space(),
                 center(AppText(
                     "${state.currentProcess.type + 1} ${LocaleKeys.out_of.tr()} 3 ${LocaleKeys.steps.tr()}",
-                    style: typoW500.copyWith(fontSize: 14.sp)))
+                    style: typoW500.copyWith(fontSize: 14)))
               ]));
 
   Widget space({double? height}) => SizedBox(height: height ?? 20);

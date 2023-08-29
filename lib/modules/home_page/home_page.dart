@@ -55,7 +55,7 @@ class _HomePageState extends BaseState<HomePage, HomeBloc> {
 
   Widget bottomNavigationWidget(BuildContext context) {
     return Container(
-        height: 63.h,
+        height: 63,
         decoration: BoxDecoration(
             color: colorWhite,
             borderRadius: const BorderRadius.only(

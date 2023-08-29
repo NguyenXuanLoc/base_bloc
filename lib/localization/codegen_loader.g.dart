@@ -22,7 +22,10 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "start": "Rozpocznij",
+    "Account_verification_may_take_up_to_24_hour": "Weryfikacja konta może potrwać do 24h. Powiadomimy Cię, kiedy Twoje konto będzie aktywne!",
     "copy_success": "copy_success",
+    "Start_using_Swayme": "Zacznij korzystać\nze Swayme!",
     "appName": "swayme",
     "Instagram_profile_from_the_previously_provided_account": "Instagramie\nz wcześniej podanego konta.",
     "Copy_and_paste_the_given_text_under_the_last_post_on_the": "Skopiuj i wstaw podany tekst pod ostatnim\n postem na profilu",

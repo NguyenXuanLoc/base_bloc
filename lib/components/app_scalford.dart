@@ -1,3 +1,4 @@
+import 'package:base_bloc/data/globals.dart';
 import 'package:base_bloc/theme/colors.dart';
 import 'package:base_bloc/utils/app_utils.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,10 @@ class AppScaffold extends StatelessWidget {
   final Widget body;
   final PreferredSizeWidget? appbar;
   final Color? backgroundColor;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final Widget? bottomNavigationBar;
   final bool isTabToHideKeyboard;
+  final bool isPadding;
 
   const AppScaffold(
       {Key? key,
@@ -16,8 +18,9 @@ class AppScaffold extends StatelessWidget {
       this.appbar,
       this.isTabToHideKeyboard = false,
       this.backgroundColor,
-      this.padding = const EdgeInsets.only(left: 0, right: 0),
-      this.bottomNavigationBar})
+      this.padding,
+      this.bottomNavigationBar,
+      this.isPadding = true})
       : super(key: key);
 
   @override
@@ -29,8 +32,13 @@ class AppScaffold extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             appBar: appbar,
             body: SafeArea(
-              minimum: padding,
-              child: body,
+              minimum: padding ??
+                  (isPadding
+                      ? EdgeInsets.only(
+                          left: contentPadding, right: contentPadding)
+                      : EdgeInsets.zero),
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width, child: body),
             ),
             bottomNavigationBar: bottomNavigationBar));
     return isTabToHideKeyboard

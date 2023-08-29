@@ -13,7 +13,7 @@ class OtpBloc extends Cubit<OtpState> {
   final VoidCallback otpSuccessCallback;
   var otpController = TextEditingController();
 
-  OtpBloc({required this.otpSuccessCallback}) : super(OtpState()) {
+  OtpBloc({required this.otpSuccessCallback}) : super(const OtpState()) {
     fakeData();
   }
 
@@ -37,7 +37,8 @@ class OtpBloc extends Cubit<OtpState> {
   }
 
   bool fakeData() {
-    otpController.text = '4444';
+    if (otpController.text.isEmpty) otpController.text = '4444';
+
     if (otpController.text == '4444') {
       return true;
     } else {

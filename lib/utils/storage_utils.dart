@@ -2,9 +2,14 @@ import 'package:base_bloc/config/constant.dart';
 import 'package:get_storage/get_storage.dart';
 
 class StorageUtils {
-  static Future<void> saveGuideline() async {
-    await GetStorage().write(StorageKey.isGuideline, true);
-  }
+  static Future<void> saveGuideline() async =>
+      await GetStorage().write(StorageKey.isGuideline, true);
+
+  static Future<void> saveRegister() async =>
+      await GetStorage().write(StorageKey.isShowRegister, true);
+
+  static Future<bool> isShowRegister() async =>
+      await GetStorage().read(StorageKey.isShowRegister) ?? false;
 
   static Future<bool> isGuideline() async =>
       await GetStorage().read(StorageKey.isGuideline) ?? false;

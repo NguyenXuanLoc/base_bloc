@@ -2,6 +2,9 @@
 
 abstract class LocaleKeys {
   static const title = 'title';
+  static const start = 'start';
+  static const Account_verification_may_take_up_to_24_hour = 'Account_verification_may_take_up_to_24_hour';
+  static const Start_using_Swayme = 'Start_using_Swayme';
   static const copy_success = 'copy_success';
   static const appName = 'appName';
   static const Instagram_profile_from_the_previously_provided_account = 'Instagram_profile_from_the_previously_provided_account';

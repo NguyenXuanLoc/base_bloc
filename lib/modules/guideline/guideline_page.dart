@@ -90,13 +90,13 @@ class _GuidelinePageState extends BaseState<GuidelinePage, GuidelineBloc> {
   Widget space({double? height}) => SizedBox(height: height ?? 45);
 
   Widget buttonWidget(String title) => AppButton(
-      width: 124.w,
+      padding: const EdgeInsets.only(left: 40, right: 40),
       onPress: () => _buttonOnClick(),
       title: title,
       backgroundColor: colorBlack,
       borderRadius: 10,
-      textStyle: typoW500.copyWith(fontSize: 14.sp, color: colorWhite),
-      height: 47.h);
+      textStyle: typoW500.copyWith(fontSize: 14, color: colorWhite),
+      height: 47);
 
   @override
   GuidelineBloc createCubit() => GuidelineBloc();

@@ -4,16 +4,20 @@ import 'package:equatable/equatable.dart';
 class RegisterContainerState extends Equatable {
   final int percentProcess;
   final RegisterType currentProcess;
+  final String? email;
 
   const RegisterContainerState(
-      {this.currentProcess = RegisterType.Email, this.percentProcess = 30});
+      {this.email,
+      this.currentProcess = RegisterType.Email,
+      this.percentProcess = 30});
 
   RegisterContainerState copyOf(
-          {int? percentProcess, RegisterType? currentProcess}) =>
+          {String? email, int? percentProcess, RegisterType? currentProcess}) =>
       RegisterContainerState(
+          email: email ?? this.email,
           currentProcess: currentProcess ?? this.currentProcess,
           percentProcess: percentProcess ?? this.percentProcess);
 
   @override
-  List<Object?> get props => [percentProcess];
+  List<Object?> get props => [percentProcess, currentProcess, email];
 }

@@ -32,8 +32,8 @@ class _SplashPageState extends BaseState<SplashPage, SplashCubit> {
                 bloc: bloc,
                 builder: (c, state) => AnimatedRotation(
                     onEnd: () => _scaleController.setRotate = true,
-                    turns: state.isStartAnimation ? 1 : 0,
-                    duration: const Duration(milliseconds: 200),
+                    turns: state.isStartAnimation ? -0.5 : 0,
+                    duration: const Duration(milliseconds: 400),
                     child: Padding(
                         padding: const EdgeInsets.all(50),
                         child: ScaleTransitionWidget(

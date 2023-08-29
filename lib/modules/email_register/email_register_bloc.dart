@@ -15,16 +15,18 @@ import '../../utils/app_utils.dart';
 enum RuleType { AcceptRule, ConfirmAcc }
 
 class EmailRegisterBloc extends Cubit<EmailRegisterState> {
-  final VoidCallback registerSuccessCallback;
+  Function(String)? registerSuccessCallback;
   var emailController = TextEditingController();
   var instagramNameController = TextEditingController();
   var dateControllerController = TextEditingController();
   var passwordController = TextEditingController();
 
-  EmailRegisterBloc({required this.registerSuccessCallback})
-      : super(EmailRegisterState()) {
+  EmailRegisterBloc() : super(EmailRegisterState()) {
     fakeData('', '');
   }
+
+  void setRegisterSuccessCallback(Function(String) registerSuccessCallback) =>
+      this.registerSuccessCallback = registerSuccessCallback;
 
   void ruleOnClick(RuleType type) {
     switch (type) {
@@ -46,22 +48,22 @@ class EmailRegisterBloc extends Cubit<EmailRegisterState> {
         if (!fakeData(email, pass)) {
           toast('Password is not correct, Please try again...');
         } else {
-          registerSuccessCallback.call();
+          registerSuccessCallback?.call(email);
         }
       });
     }
   }
 
   bool fakeData(String email, String pass) {
-    emailController.text = 'locduoi1998@gmail.com';
-    instagramNameController.text = 'locduoi';
-    dateControllerController.text = '13/02/1009';
-    passwordController.text = 'Test1234';
-    emit(state.copyOf(isAcceptRule: true, isConfirmAcc: true));
-    if (email == 'locduoi1998@gmail.com' && pass == 'Test1234') {
-      return true;
+    if (emailController.text.isEmpty) {
+      emailController.text = 'locduoi1998@gmail.com';
+      instagramNameController.text = 'locduoi';
+      dateControllerController.text = '13/02/1009';
+      passwordController.text = 'Test1234';
     }
-    return false;
+
+    emit(state.copyOf(isAcceptRule: true, isConfirmAcc: true));
+    return true;
   }
 
   bool isValid(

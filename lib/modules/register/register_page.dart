@@ -37,7 +37,7 @@ class _RegisterPageState extends BaseState<RegisterPage, RegisterBloc> {
         body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           space(height: 107 - MediaQuery.of(context).padding.top),
           AppText(LocaleKeys.Join_us_and_strengthen_your_influence.tr(),
-              style: typoW700.copyWith(fontSize: 24.sp),
+              style: typoW700.copyWith(fontSize: 24),
               textAlign: TextAlign.center),
           const Spacer(),
           buttonWidget(
@@ -56,7 +56,7 @@ class _RegisterPageState extends BaseState<RegisterPage, RegisterBloc> {
               onPress: () =>
                   bloc.buttonOnclick(ButtonType.ACCOUNT_EXIST, context),
               titleWidget: AppText(LocaleKeys.I_already_have_an_account.tr(),
-                  style: typoW500.copyWith(fontSize: 15.sp))),
+                  style: typoW500.copyWith(fontSize: 15))),
           space()
         ]));
   }
@@ -66,7 +66,7 @@ class _RegisterPageState extends BaseState<RegisterPage, RegisterBloc> {
       AppButton(
         width: MediaQuery.of(context).size.width,
         onPress: () => bloc.buttonOnclick(type, context),
-        height: 53.h,
+        height: 52,
         titleWidget: icon != null
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -78,12 +78,12 @@ class _RegisterPageState extends BaseState<RegisterPage, RegisterBloc> {
                   const SizedBox(width: 10),
                   AppText(title,
                       style: typoW500.copyWith(
-                          fontSize: 16.sp, color: colorText ?? colorText100))
+                          fontSize: 16, color: colorText ?? colorText100))
                 ],
               )
             : AppText(title,
                 style: typoW500.copyWith(
-                    fontSize: 16.sp, color: colorText ?? colorText100)),
+                    fontSize: 16, color: colorText ?? colorText100)),
         backgroundColor: backgroundColor ?? HexColor('EFEFEF'),
         borderRadius: 10,
       );

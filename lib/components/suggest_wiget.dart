@@ -26,7 +26,7 @@ class SuggestWidget extends StatelessWidget {
                       e.toString(),
                       style: typoSmallTextBold.copyWith(
                           color: colorWhite,
-                          fontSize: 11.sp,
+                          fontSize: 11,
                           // fontWeight: FontWeight.w600,
                           decoration: TextDecoration.underline),
                     ),
@@ -34,7 +34,7 @@ class SuggestWidget extends StatelessWidget {
                         ? const SizedBox()
                         : AppText("   |",
                             style: typoSmallTextRegular.copyWith(
-                                color: colorGrey80, fontSize: 10.sp))
+                                color: colorGrey80, fontSize: 10))
                   ],
                 ),
               ))

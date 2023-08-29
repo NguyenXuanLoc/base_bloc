@@ -40,9 +40,8 @@ class _VerifyInstagramPageState
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            space(),
             AppText(LocaleKeys.Verify_your_Instagram.tr(),
-                style: typoW700.copyWith(fontSize: 24.sp)),
+                style: typoW500.copyWith(fontSize: 24)),
             space(),
             RichText(
                 textAlign: TextAlign.start,
@@ -52,17 +51,17 @@ class _VerifyInstagramPageState
                     children: [
                       TextSpan(
                           text: "@${LocaleKeys.appName.tr()} ",
-                          style: typoW700.copyWith(fontSize: 14.sp)),
+                          style: typoW700.copyWith(fontSize: 14)),
                       TextSpan(
-                          style: typoW500.copyWith(fontSize: 14.sp),
+                          style: typoW500.copyWith(fontSize: 14),
                           text: LocaleKeys
                                   .Instagram_profile_from_the_previously_provided_account
                               .tr())
                     ],
-                    style: typoW500.copyWith(fontSize: 14.sp))),
+                    style: typoW500.copyWith(fontSize: 14))),
             space(height: 80),
             copyWidget(),
-            Spacer(),
+            const Spacer(),
             nextWidget(),
             space()
           ],
@@ -76,11 +75,11 @@ class _VerifyInstagramPageState
               onTap: () => widget.goBack.call()),
           const Spacer(),
           AppButton(
-              width: 124.w,
+              width: 124,
               onPress: () => widget.verifySuccessCallback.call(),
-              height: 53.h,
+              height: 47,
               titleWidget: AppText(LocaleKeys.next.tr(),
-                  style: typoW500.copyWith(fontSize: 16.sp, color: colorWhite)),
+                  style: typoW500.copyWith(fontSize: 16, color: colorWhite)),
               backgroundColor: colorBlack,
               borderRadius: 10)
         ],
@@ -88,7 +87,7 @@ class _VerifyInstagramPageState
 
   Widget copyWidget() => Container(
       width: MediaQuery.of(context).size.width,
-      height: 57.h,
+      height: 57,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5), color: HexColor("EBEBEB")),
       child: Row(
@@ -96,9 +95,9 @@ class _VerifyInstagramPageState
           const SizedBox(width: 42),
           Expanded(
               child: Center(
-                  child: Image.asset(Assets.png.icSupper.path, width: 90.w))),
+                  child: Image.asset(Assets.png.icSupper.path, width: 90))),
           InkWell(
-              child: Image.asset(Assets.png.icCopy.path, width: 42),
+              child: Image.asset(Assets.png.icCopy.path, width: 41),
               onTap: () => bloc.copyOnClick(context)),
           const SizedBox(width: 10)
         ],

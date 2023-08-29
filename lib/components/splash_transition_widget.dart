@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,19 +47,23 @@ class _ScaleTransitionWidgetState extends State<ScaleTransitionWidget>
   void initState() {
     _controller.forward();
     _scaleController._startRotate = (value) {
-      isScale = true;
-      _controller.reverse();
-      isVisible = !isVisible;
-      setState(() {});
+      Timer(const Duration(milliseconds: 400), () {
+        isScale = true;
+        _controller.reverse();
+        isVisible = !isVisible;
+        setState(() {});
+      });
     };
     widget.controller.call(_scaleController);
     super.initState();
   }
-@override
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedScale(

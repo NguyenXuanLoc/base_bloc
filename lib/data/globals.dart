@@ -17,4 +17,4 @@ bool isTokenExpired = false;
 int timePackageRemaining = 0;
 int timeOut = 30;
 
-double contentPadding = 15;
+double contentPadding = 14;

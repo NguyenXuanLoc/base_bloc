@@ -2,6 +2,7 @@ class StorageKey {
   StorageKey._();
 
   static const String isGuideline = 'isGuideline';
+  static const String isShowRegister = 'isShowRegister';
 }
 
 class ConstantKey {
