@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sway_me">
+    package="com.swayme.app">
    <application
         android:label="Sway me"
         android:name="${applicationName}"
