@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "196505369658",
+    "project_id": "swayme-8dfd1",
+    "storage_bucket": "swayme-8dfd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196505369658:android:29710da36aabc6bd9ac903",
+        "android_client_info": {
+          "package_name": "com.swayme.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196505369658-r23tgjk5qkjlg6ulinttj36v62c6m12o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swayme.app",
+            "certificate_hash": "e9c7e07eee4ee5d3842e80364438870c2ee029f1"
+          }
+        },
+        {
+          "client_id": "196505369658-bf9d52np3pjnh20la5qo52n5r68r7j7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEe19rKaithuS2aZZ_uFkFrUwwxhOYRJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196505369658-bf9d52np3pjnh20la5qo52n5r68r7j7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

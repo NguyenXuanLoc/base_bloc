@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+    <string name="app_name">Sway me</string>
+    <string name="facebook_app_id">649390413826865</string>
+    <string name="fb_login_protocol_scheme">fb649390413826865</string>
+    <string name="facebook_client_token">d414284fe7f683725d4e4c1c22a7172e</string>
+
+</resources>
+
+

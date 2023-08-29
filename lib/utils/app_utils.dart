@@ -113,7 +113,7 @@ class Utils {
         maxTime: DateTime(time.year, time.month, time.day),
         onChanged: (date) {}, onConfirm: (date) {
       callback.call(date);
-    }, currentTime: DateTime.now(), locale: LocaleType.en);
+    }, currentTime: DateTime.now(), locale: LocaleType.pl);
   }
 
   static String convertTimeToDDMMHH(DateTime? time) {

@@ -9,12 +9,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_facebook_keyhash/flutter_facebook_keyhash.dart';
 
 import 'localization/codegen_loader.g.dart';
 import 'localization/locale_keys.dart';
 
 void main() async {
-
   await configApp();
   runApp(
     EasyLocalization(
@@ -31,6 +32,7 @@ Future<void> configApp() async {
   HttpOverrides.global = MyHttpOverrides();
   configOrientation();
   await GetStorage.init();
+  await Firebase.initializeApp();
   // await dotenv.load(fileName: '.env.dev');
 }
 

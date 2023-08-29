@@ -47,7 +47,7 @@ class _RegisterPageState extends BaseState<RegisterPage, RegisterBloc> {
               backgroundColor: HexColor('25C769')),
           space(),
           buttonWidget(
-              LocaleKeys.Continue_with_Apple_ID.tr(), ButtonType.FACEBOOK,
+              LocaleKeys.Continue_with_Apple_ID.tr(), ButtonType.APPLE,
               icon: Assets.png.icApple.path),
           space(),
           buttonWidget(LocaleKeys.Email_registration.tr(), ButtonType.EMAIL),

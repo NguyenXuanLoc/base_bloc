@@ -1,47 +1,42 @@
 import 'package:base_bloc/base/base_state.dart';
-import 'package:base_bloc/base/hex_color.dart';
-import 'package:base_bloc/components/app_button.dart';
-import 'package:base_bloc/components/app_scalford.dart';
-import 'package:base_bloc/components/app_text.dart';
-import 'package:base_bloc/components/app_text_field.dart';
-import 'package:base_bloc/components/gradient_progress_bar.dart';
-import 'package:base_bloc/data/globals.dart';
-import 'package:base_bloc/localization/locale_keys.dart';
-import 'package:base_bloc/modules/email_register/email_register_bloc.dart';
-import 'package:base_bloc/theme/app_styles.dart';
-import 'package:base_bloc/utils/log_utils.dart';
+import 'package:base_bloc/modules/register_with_third_party/third_party_register/third_party_register_bloc.dart';
+import 'package:base_bloc/modules/register_with_third_party/third_party_register/third_party_register_state.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../components/dialogs.dart';
-import '../../gen/assets.gen.dart';
-import '../../theme/colors.dart';
-import 'email_register_state.dart';
+import '../../../base/hex_color.dart';
+import '../../../components/app_button.dart';
+import '../../../components/app_scalford.dart';
+import '../../../components/app_text.dart';
+import '../../../components/app_text_field.dart';
+import '../../../data/globals.dart';
+import '../../../gen/assets.gen.dart';
+import '../../../localization/locale_keys.dart';
+import '../../../theme/app_styles.dart';
+import '../../../theme/colors.dart';
+import '../../email_register/email_register_bloc.dart';
+import '../../email_register/email_register_page.dart';
 
-enum TextFieldType { Email, InstagramName, DateTime, Pass,Phone,None }
-
-class EmailRegisterPage extends StatefulWidget {
-  final Function(String) registerSuccessCallback;
+class ThirdPartyRegisterPage extends StatefulWidget {
   final VoidCallback goBack;
+  final VoidCallback registerSuccessCallback;
 
-  const EmailRegisterPage(
-      {Key? key, required this.registerSuccessCallback, required this.goBack})
+  const ThirdPartyRegisterPage(
+      {Key? key, required this.goBack, required this.registerSuccessCallback})
       : super(key: key);
 
   @override
-  State<EmailRegisterPage> createState() => _EmailRegisterPageState();
+  State<ThirdPartyRegisterPage> createState() => _ThirdPartyRegisterPageState();
 }
 
-class _EmailRegisterPageState
-    extends BaseState<EmailRegisterPage, EmailRegisterBloc> {
+class _ThirdPartyRegisterPageState
+    extends BaseState<ThirdPartyRegisterPage, ThirdPartyRegisterBloc> {
   @override
   void init() {
     bloc.setRegisterSuccessCallback(
-        (p0) => widget.registerSuccessCallback.call(p0));
+        (p0) => widget.registerSuccessCallback.call());
   }
 
   @override
@@ -53,8 +48,7 @@ class _EmailRegisterPageState
           AppText(LocaleKeys.Join_Swayme.tr(),
               style: typoW500.copyWith(fontSize: 24)),
           space(height: 40),
-          textField(bloc.emailController, TextFieldType.Email,
-              hintText: LocaleKeys.your_email.tr()),
+          phoneWidget(),
           space(height: 5),
           textField(bloc.instagramNameController, TextFieldType.InstagramName,
               hintText: LocaleKeys.Your_Instagram_name.tr()),
@@ -66,12 +60,6 @@ class _EmailRegisterPageState
               hintText: 'DD/MM/YYYY',
               onTap: () => bloc.dateOnclick(context)),
           space(height: 5),
-          textField(
-            bloc.passwordController,
-            TextFieldType.Pass,
-            hintText: LocaleKeys.Password.tr(),
-            obscureText: true,
-          ),
           AppText(
               LocaleKeys
                       .We_recommend_using_a_different_password_than_your_Instagram_account
@@ -87,7 +75,7 @@ class _EmailRegisterPageState
               LocaleKeys.I_confirm_that_the_given_account_is_my_personal_account
                   .tr(),
               RuleType.ConfirmAcc),
-          BlocBuilder<EmailRegisterBloc, EmailRegisterState>(
+          BlocBuilder<ThirdPartyRegisterBloc, ThirdPartyRegisterState>(
               bloc: bloc,
               builder: (c, state) => AppText(state.errorRules ?? '',
                   style: typoW400.copyWith(
@@ -108,10 +96,9 @@ class _EmailRegisterPageState
             width: 124,
             onPress: () => bloc.nextOnclick(
                 context,
-                bloc.emailController.text,
+                bloc.phoneController.text,
                 bloc.instagramNameController.text,
-                bloc.dateControllerController.text,
-                bloc.passwordController.text),
+                bloc.dateControllerController.text),
             height: 47,
             titleWidget: AppText(LocaleKeys.next.tr(),
                 style: typoW500.copyWith(fontSize: 16, color: colorWhite)),
@@ -132,16 +119,13 @@ class _EmailRegisterPageState
                   height: 25,
                   width: 25,
                   color: HexColor('D9D9D9'),
-                  child: BlocBuilder<EmailRegisterBloc, EmailRegisterState>(
+                  child: BlocBuilder<ThirdPartyRegisterBloc,
+                          ThirdPartyRegisterState>(
                       bloc: bloc,
                       builder: (c, state) => type == RuleType.ConfirmAcc &&
                                   state.isConfirmAccount ||
                               type == RuleType.AcceptRule && state.isAcceptRule
-                          ? const Icon(
-                              Icons.check,
-                              color: colorWhite,
-                              size: 15,
-                            )
+                          ? const Icon(Icons.check, color: colorWhite, size: 15)
                           : const SizedBox())),
             ),
             const SizedBox(width: 10),
@@ -149,24 +133,58 @@ class _EmailRegisterPageState
                 child: AppText(content, style: typoW500.copyWith(fontSize: 12)))
           ]);
 
-  Widget textField(TextEditingController controller, TextFieldType type,
+  Widget phoneWidget() => Stack(
+        children: [
+          textField(null, TextFieldType.Phone, colorBorder: Colors.transparent),
+          Row(children: [
+            Flexible(
+                flex: 1,
+                child: Stack(children: [
+                  textField(null, TextFieldType.None),
+                  Positioned(
+                      top: 15,
+                      left: 10,
+                      child: AppText('+48',
+                          style: typoW500.copyWith(color: HexColor('8F8F8F'))))
+                ])),
+            const SizedBox(width: 17),
+            Flexible(
+                flex: 5,
+                child: textField(bloc.phoneController, TextFieldType.Phone,
+                    isShowError: false,
+                    hintText: LocaleKeys.phone_number.tr(),
+                    textInputType: TextInputType.phone))
+          ])
+        ],
+      );
+
+  Widget textField(TextEditingController? controller, TextFieldType type,
           {String? hintText,
           bool enable = true,
           VoidCallback? onTap,
-          bool? obscureText}) =>
-      BlocBuilder<EmailRegisterBloc, EmailRegisterState>(
+          bool? obscureText,
+          TextInputType? textInputType,
+          bool isShowError = true,
+          InputDecoration? decoration,
+          Color? colorBorder}) =>
+      BlocBuilder<ThirdPartyRegisterBloc, ThirdPartyRegisterState>(
           bloc: bloc,
           builder: (c, state) => AppTextField(
+              colorBorder: colorBorder,
+              decoration: decoration,
+              textInputType: textInputType,
               obscureText: obscureText,
-              errorText: type == TextFieldType.Email
-                  ? state.errorEmail
-                  : type == TextFieldType.DateTime
-                      ? state.errorDate
-                      : type == TextFieldType.InstagramName
-                          ? state.errorInstagramName
-                          : type == TextFieldType.Pass
-                              ? state.errorPass
-                              : null,
+              errorText: isShowError
+                  ? type == TextFieldType.Phone
+                      ? state.errorPhoneNumber
+                      : type == TextFieldType.DateTime
+                          ? state.errorDate
+                          : type == TextFieldType.InstagramName
+                              ? state.errorInstagramName
+                              : type == TextFieldType.Pass
+                                  ? state.errorPass
+                                  : null
+                  : null,
               readOnly: !enable,
               onTap: () => onTap?.call(),
               controller: controller,
@@ -177,8 +195,5 @@ class _EmailRegisterPageState
   Widget space({double? height}) => SizedBox(height: height ?? 20);
 
   @override
-  EmailRegisterBloc createCubit() => EmailRegisterBloc(
-      /*   registerSuccessCallback: () =>
-          widget.registerSuccessCallback.call(bloc.emailController.text)*/
-      );
+  ThirdPartyRegisterBloc createCubit() => ThirdPartyRegisterBloc();
 }

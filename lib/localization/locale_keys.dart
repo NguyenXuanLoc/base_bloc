@@ -3,6 +3,8 @@
 abstract class LocaleKeys {
   static const title = 'title';
   static const start = 'start';
+  static const phone_number = 'phone_number';
+  static const phone_is_not_valid = 'phone_is_not_valid';
   static const Account_verification_may_take_up_to_24_hour = 'Account_verification_may_take_up_to_24_hour';
   static const Start_using_Swayme = 'Start_using_Swayme';
   static const copy_success = 'copy_success';
@@ -20,6 +22,7 @@ abstract class LocaleKeys {
   static const Na_podany_adres_email = 'Na_podany_adres_email';
   static const We_have_sent_the_activation_code =
       'We_have_sent_the_activation_code';
+  static const please_input_phone = 'please_input_phone';
   static const please_input_email = 'please_input_email';
   static const email_is_not_valid = 'email_is_not_valid';
   static const please_input_instargram_name = 'please_input_instargram_name';

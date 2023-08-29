@@ -10,7 +10,7 @@ class AppTextField extends StatefulWidget {
   final String? hintText;
   final String? errorText;
   final bool? obscureText;
-  final TextInputType? keyboardType;
+  final TextInputType? textInputType;
   final TextInputAction? textInputAction;
   final int? maxLength;
   final Widget? prefixIcon;
@@ -31,13 +31,14 @@ class AppTextField extends StatefulWidget {
   final bool isShowErrorText;
   final int? maxLine;
   final List<TextInputFormatter>? inputFormatters;
+  final Color? colorBorder;
 
   const AppTextField(
       {this.controller,
       this.hintText,
       this.errorText,
       this.obscureText,
-      this.keyboardType,
+      this.textInputType,
       this.textInputAction,
       this.maxLength,
       this.prefixIcon,
@@ -58,7 +59,7 @@ class AppTextField extends StatefulWidget {
       this.height,
       this.isShowErrorText = true,
       this.maxLine,
-      this.inputFormatters})
+      this.inputFormatters, this.colorBorder})
       : super(key: key);
 
   @override
@@ -87,17 +88,17 @@ class _AppTextFieldState extends State<AppTextField> {
           maxLengthEnforcement: widget.maxLengthEnforcement,
           focusNode: widget.focusNode,
           controller: widget.controller,
-          style: widget.textStyle
-                  ?.copyWith(height: widget.height, fontSize: 15) ??
-              typoW500.copyWith(height: widget.height, fontSize: 15),
+          style:
+              widget.textStyle?.copyWith(height: widget.height, fontSize: 15) ??
+                  typoW500.copyWith(height: widget.height, fontSize: 15),
           obscureText: widget.obscureText ?? false,
-          keyboardType: widget.keyboardType,
+          keyboardType: widget.textInputType,
           textInputAction: widget.textInputAction,
           maxLength: widget.maxLength,
           autofocus: widget.autofocus ?? false,
           autocorrect: false,
           maxLines: widget.maxLine ??
-              (widget.keyboardType == TextInputType.multiline ? 4 : 1),
+              (widget.textInputType == TextInputType.multiline ? 4 : 1),
           onEditingComplete: widget.onEditingComplete,
           onChanged: widget.onChanged,
           onSubmitted: (text) {
@@ -106,11 +107,13 @@ class _AppTextFieldState extends State<AppTextField> {
           onTap: widget.onTap,
           decoration: widget.decoration ??
               decorTextField.copyWith(
-                  focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: colorGrey20, width: 1),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: widget.colorBorder ?? colorGrey20, width: 1),
                   ),
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: colorGrey20, width: 1),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: widget.colorBorder ?? colorGrey20, width: 1),
                   ),
                   /*contentPadding: EdgeInsets.only(),*/
                   hintText: widget.hintText,

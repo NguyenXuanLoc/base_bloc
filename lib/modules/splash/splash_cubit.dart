@@ -22,11 +22,11 @@ class SplashCubit extends Cubit<SplashState> {
     var isRegister = await StorageUtils.isShowRegister();
     RouterUtils.pushTo(
         context,
-        !isRegister
+        RegisterPage()/* !isRegister
             ? RegisterPage()
             : !isGuideline
                 ? const GuidelinePage()
-                : const HomePage(),
+                : const HomePage()*/,
         isReplace: true);
   }
 }

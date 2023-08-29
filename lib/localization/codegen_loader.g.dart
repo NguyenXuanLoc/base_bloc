@@ -22,6 +22,9 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "phone_is_not_valid": "Phone number is not valid",
+    "please_input_phone": "Please input phone number",
+    "phone_number": "Numer telefonu",
     "start": "Rozpocznij",
     "Account_verification_may_take_up_to_24_hour": "Weryfikacja konta może potrwać do 24h. Powiadomimy Cię, kiedy Twoje konto będzie aktywne!",
     "copy_success": "copy_success",
