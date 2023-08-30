@@ -61,5 +61,7 @@
 <string>d414284fe7f683725d4e4c1c22a7172e</string>
 <key>FacebookDisplayName</key>
 <string>Sway me</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>
