@@ -22,6 +22,12 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "By_swiping_right_you_accept": "Przesuwając w prawo akceptujesz",
+    "swayme_regulations": "regulamin Swayme",
+    "answer": "Odbierz",
+    "Post_to_your_story_within_24_hours": "Opublikuj na swoim\nstory w ciągu 24 godzin",
+    "Mark_on_it": "Oznacz na nim\n@anatolia_restaurant_lounge",
+    "take_a_photo_or_video_in_the_premises": "Zrób zdjęcie lub filmik\nw lokalu",
     "phone_is_not_valid": "Phone number is not valid",
     "please_input_phone": "Please input phone number",
     "phone_number": "Numer telefonu",

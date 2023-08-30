@@ -3,6 +3,12 @@
 abstract class LocaleKeys {
   static const title = 'title';
   static const start = 'start';
+  static const By_swiping_right_you_accept = 'By_swiping_right_you_accept';
+  static const swayme_regulations = 'swayme_regulations';
+  static const Post_to_your_story_within_24_hours = 'Post_to_your_story_within_24_hours';
+  static const Mark_on_it = 'Mark_on_it';
+  static const take_a_photo_or_video_in_the_premises = 'take_a_photo_or_video_in_the_premises';
+  static const answer = 'answer';
   static const phone_number = 'phone_number';
   static const phone_is_not_valid = 'phone_is_not_valid';
   static const Account_verification_may_take_up_to_24_hour = 'Account_verification_may_take_up_to_24_hour';
