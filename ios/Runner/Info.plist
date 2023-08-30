@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.swayme.app</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -45,5 +45,21 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+  <key>CFBundleURLSchemes</key>
+  <array>
+    <string>fb649390413826865</string>
+  </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>649390413826865</string>
+<key>FacebookClientToken</key>
+<string>d414284fe7f683725d4e4c1c22a7172e</string>
+<key>FacebookDisplayName</key>
+<string>Sway me</string>
 </dict>
 </plist>
