@@ -22,6 +22,7 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "near": "W pobliżu",
     "Create_an_account": "Stwórz konto",
     "Sign_in_with_Apple_ID": "Zaloguj się przez\nApple ID",
     "Log_in_with_Facebook": "Zaloguj się przez\nacebook",

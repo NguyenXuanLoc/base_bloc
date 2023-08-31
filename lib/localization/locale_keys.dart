@@ -4,6 +4,7 @@ abstract class LocaleKeys {
   static const title = 'title';
   static const start = 'start';
   static const Login = 'Login';
+  static const near = 'near';
   static const Create_an_account = 'Create_an_account';
   static const Sign_in_with_Apple_ID = 'Sign_in_with_Apple_ID';
   static const Log_in_with_Facebook = 'Log_in_with_Facebook';

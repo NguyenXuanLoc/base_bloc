@@ -31,11 +31,16 @@ class $AssetsPngGen {
   /// File path: assets/png/ic_copy.png
   AssetGenImage get icCopy => const AssetGenImage('assets/png/ic_copy.png');
 
+  /// File path: assets/png/ic_map_pin.png
+  AssetGenImage get icMapPin =>
+      const AssetGenImage('assets/png/ic_map_pin.png');
+
   /// File path: assets/png/ic_supper.png
   AssetGenImage get icSupper => const AssetGenImage('assets/png/ic_supper.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [doctor, icApple, icCopy, icSupper];
+  List<AssetGenImage> get values =>
+      [doctor, icApple, icCopy, icMapPin, icSupper];
 }
 
 class $AssetsSvgGen {

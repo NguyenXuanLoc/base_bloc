@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:base_bloc/base/base_state.dart';
 import 'package:base_bloc/components/app_scalford.dart';
 import 'package:base_bloc/modules/login/login_bloc.dart';
@@ -18,9 +16,7 @@ import '../../gen/assets.gen.dart';
 import '../../localization/locale_keys.dart';
 import '../../theme/app_styles.dart';
 import '../../theme/colors.dart';
-import '../../utils/log_utils.dart';
 import '../email_register/email_register_page.dart';
-import '../register/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
