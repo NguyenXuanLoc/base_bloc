@@ -22,6 +22,16 @@ class Applocalizations extends AssetLoader {
 
   static const Map<String, dynamic> en = {
     "title": "Poland",
+    "Create_an_account": "Stwórz konto",
+    "Sign_in_with_Apple_ID": "Zaloguj się przez\nApple ID",
+    "Log_in_with_Facebook": "Zaloguj się przez\nacebook",
+    "Login": "Zaloguj się",
+    "Welcome_back": "Witaj ponownie!",
+    "I_already_have_an_account": "Mam już konto",
+    "Email_registration": "Rejestracja przez e-mail",
+    "Continue_with_Apple_ID": "Kontynuuj z Apple ID",
+    "Register_with_Facebook": "Zarejestruj się przez Facebook",
+    "Join_us_and_strengthen_your_influence": "Dołącz do nas\ni wzmocnij swój wpływ",
     "By_swiping_right_you_accept": "Przesuwając w prawo akceptujesz",
     "swayme_regulations": "regulamin Swayme",
     "answer": "Odbierz",
@@ -64,13 +74,7 @@ class Applocalizations extends AssetLoader {
     "Join_Swayme": "Dołącz do Swayme!",
     "out_of": "out of",
     "steps": "steps",
-    "I_already_have_an_account": "Mam już konto",
-    "Email_registration": "Rejestracja przez e-mail",
     "Registration_with_a_phone_number": "Rejestracja z numerem telefonu",
-    "Continue_with_Apple_ID": "Kontynuuj z Apple ID",
-    "Register_with_Facebook": "Zarejestruj się przez Facebook",
-    "Join_us_and_strengthen_your_influence":
-        "Dołącz do nas i wzmocnij swój wpływ",
     "go_to_the_application": "Przejdź do aplikacji",
     "getting_discounts_has_never_been_so_fun":
         "Zdobywanie zniżek jeszcze nigdy nie było tak przyjemne!",

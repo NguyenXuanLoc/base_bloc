@@ -48,24 +48,24 @@ class _ThirdPartyRegisterPageState
           AppText(LocaleKeys.Join_Swayme.tr(),
               style: typoW500.copyWith(fontSize: 24)),
           space(height: 40),
-          phoneWidget(),
-          space(height: 5),
+          /*        phoneWidget(),
+          space(height: 5),*/
           textField(bloc.instagramNameController, TextFieldType.InstagramName,
               hintText: LocaleKeys.Your_Instagram_name.tr()),
-          space(height: 5),
+          /*   space(height: 5),
           textField(
               bloc.dateControllerController,
               enable: false,
               TextFieldType.DateTime,
               hintText: 'DD/MM/YYYY',
-              onTap: () => bloc.dateOnclick(context)),
+              onTap: () => bloc.dateOnclick(context)),*/
           space(height: 5),
-          AppText(
+          /*    AppText(
               LocaleKeys
                       .We_recommend_using_a_different_password_than_your_Instagram_account
                   .tr(),
               style:
-                  typoW500.copyWith(fontSize: 12, color: HexColor('ADADAD'))),
+                  typoW500.copyWith(fontSize: 12, color: HexColor('ADADAD'))),*/
           space(),
           ruleWidget(
               LocaleKeys.I_accept_the_terms_of_use.tr(), RuleType.AcceptRule,

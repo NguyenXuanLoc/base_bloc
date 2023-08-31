@@ -13,7 +13,7 @@ class CircleProcessWidget extends StatelessWidget {
       height: 24,
       child: CircularProgressIndicator(
         strokeWidth: 2,
-        color: colorBlue80,
+        color: colorBlack,
       ),
     );
   }

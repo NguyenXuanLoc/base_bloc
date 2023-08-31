@@ -3,6 +3,16 @@
 abstract class LocaleKeys {
   static const title = 'title';
   static const start = 'start';
+  static const Login = 'Login';
+  static const Create_an_account = 'Create_an_account';
+  static const Sign_in_with_Apple_ID = 'Sign_in_with_Apple_ID';
+  static const Log_in_with_Facebook = 'Log_in_with_Facebook';
+  static const Welcome_back = 'Welcome_back';
+  static const I_already_have_an_account = 'I_already_have_an_account';
+  static const Email_registration = 'Email_registration';
+  static const Continue_with_Apple_ID = 'Continue_with_Apple_ID';
+  static const Register_with_Facebook = 'Register_with_Facebook';
+  static const Join_us_and_strengthen_your_influence = 'Join_us_and_strengthen_your_influence';
   static const By_swiping_right_you_accept = 'By_swiping_right_you_accept';
   static const swayme_regulations = 'swayme_regulations';
   static const Post_to_your_story_within_24_hours = 'Post_to_your_story_within_24_hours';
@@ -48,14 +58,8 @@ abstract class LocaleKeys {
   static const your_email = 'your_email';
   static const out_of = 'out_of';
   static const steps = 'steps';
-  static const I_already_have_an_account = 'I_already_have_an_account';
-  static const Email_registration = 'Email_registration';
   static const Registration_with_a_phone_number =
       'Registration_with_a_phone_number';
-  static const Continue_with_Apple_ID = 'Continue_with_Apple_ID';
-  static const Register_with_Facebook = 'Register_with_Facebook';
-  static const Join_us_and_strengthen_your_influence =
-      'Join_us_and_strengthen_your_influence';
   static const go_to_the_application = 'go_to_the_application';
   static const getting_discounts_has_never_been_so_fun =
       'getting_discounts_has_never_been_so_fun';

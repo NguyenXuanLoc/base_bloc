@@ -18,7 +18,7 @@ PreferredSizeWidget AppbarWidget(
             padding: EdgeInsets.only(top: 18, left: contentPadding, bottom: 18),
             child: InkWell(
               child: SvgPicture.asset(Assets.svg.icBack),
-              onTap: () => goBack.call(),
+              onTap: () => goBack.call()
             )),
         centerTitle: isCenterTitle,
         title: AppText(title ?? '',
