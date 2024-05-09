@@ -5,16 +5,15 @@ import 'package:flutter/cupertino.dart';
 import '../../router/application.dart';
 
 class RootSecondPage extends StatefulWidget {
-  const RootSecondPage({Key? key}) : super(key: key);
+  final GlobalKey<NavigatorState> navigatorKey;
+  const RootSecondPage({Key? key, required this.navigatorKey})
+      : super(key: key);
 
   @override
   State<RootSecondPage> createState() => _RootSecondPageState();
 }
 
 class _RootSecondPageState extends State<RootSecondPage> {
-  final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey(debugLabel: 'RootCategoryPageNavigatorState');
-
   @override
   void initState() {
     final router = FluroRouter();
@@ -25,13 +24,8 @@ class _RootSecondPageState extends State<RootSecondPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        child: Navigator(
-          key: navigatorKey,
-          onGenerateRoute: Application.routerTabSecond.generator,
-        ),
-        onWillPop: () async {
-          return !navigatorKey.currentState!.canPop();
-        });
+    return Navigator(
+        key: widget.navigatorKey,
+        onGenerateRoute: Application.routerTabSecond.generator);
   }
 }

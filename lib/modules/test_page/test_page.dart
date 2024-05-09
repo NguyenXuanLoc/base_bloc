@@ -14,9 +14,9 @@ class TestPage extends StatefulWidget {
   State<TestPage> createState() => _TestPageState();
 }
 
-class _TestPageState extends BasePopState<TestPage> {
+class _TestPageState extends BaseState<TestPage> {
   @override
-  Widget buildWidget(BuildContext context) {
+  Widget build(BuildContext context) {
     return AppScaffold(
         body: Center(
       child: TextButton(
@@ -28,7 +28,4 @@ class _TestPageState extends BasePopState<TestPage> {
       ),
     ));
   }
-
-  @override
-  int get tabIndex => widget.tabIndex;
 }

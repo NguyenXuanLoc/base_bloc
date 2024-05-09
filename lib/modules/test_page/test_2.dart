@@ -14,19 +14,18 @@ class Test2Page extends StatefulWidget {
   State<Test2Page> createState() => _TestPageState();
 }
 
-class _TestPageState extends BasePopState<Test2Page> {
+class _TestPageState extends BaseState<Test2Page> {
   @override
-  Widget buildWidget(BuildContext context) {
+  Widget build(BuildContext context) {
     return AppScaffold(
         body: Center(
-          child: TextButton(
-            child: Text('TAB TEST 2: ${widget.tabIndex}'),
-            onPressed: () => RouterUtils.pushMain(
-                context: context, route: MainRouters.test, argument: widget.tabIndex),
-          ),
-        ));
+      child: TextButton(
+        child: Text('TAB TEST 2: ${widget.tabIndex}'),
+        onPressed: () => RouterUtils.pushMain(
+            context: context,
+            route: MainRouters.test,
+            argument: widget.tabIndex),
+      ),
+    ));
   }
-
-  @override
-  int get tabIndex => widget.tabIndex;
 }
