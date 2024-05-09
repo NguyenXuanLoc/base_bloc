@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   await configApp();
@@ -59,7 +58,6 @@ class _MyAppState extends State<MyApp> {
               title: 'Fluro',
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
-                textTheme: GoogleFonts.mulishTextTheme(),
                 backgroundColor: Colors.white,
                 primaryColor: Colors.white,
                 bottomAppBarColor: Colors.yellow,
